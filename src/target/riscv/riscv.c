@@ -3033,10 +3033,10 @@ int riscv_xlen_of_hart(const struct target *target, int hartid)
 	return r->xlen[hartid];
 }
 
-extern struct rtos_type riscv_rtos;
+extern struct rtos_type hwthread_rtos;
 bool riscv_rtos_enabled(const struct target *target)
 {
-	return target->rtos && target->rtos->type == &riscv_rtos;
+	return target->rtos && target->rtos->type == &hwthread_rtos;
 }
 
 int riscv_set_current_hartid(struct target *target, int hartid)
